@@ -1181,6 +1181,7 @@ function GetHttpResponse([ref]$Target, [Object]$Options) {
                     $response.Close();
                     return $null;
                 }
+                $Target.Value.LocalName = GetDownloadLocalName $redirecturl $Options;
             }
         }
     } catch [Net.WebException] {
